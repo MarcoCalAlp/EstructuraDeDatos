@@ -62,10 +62,12 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
     tipo=parseInt(entrada.readLine());
     lib.setTipo(tipo);
      libs.AgregarLibro(lib);
+     libs.AddToList(lib);
      System.out.println("Libro Agregado con exito!");
     }
     
-    public void mostrarTipo(int tipo){
+    public void mostrarTipo(){
+        libs.TreeMostrarPorTipo();
     }
     public void mostrarAutor(String autor){
     }
@@ -109,14 +111,7 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
             }
             case 2:
             {
-                    System.out.println("Buscar un elemento");
-                    elem=Integer.parseInt(entrada.readLine());
-                    /*if(obj.buscar(elem))
-                    {
-                            System.out.println("El elemento se encuentra en el arbol ");
-                    }
-                    else
-                            System.out.println("El elemento NO se encuentra en el arbol ");*/
+                    mostrarTipo();
                     break;
             }
             case 3:
