@@ -457,6 +457,8 @@ private Nodo<T> estructurar(Nodo<T> nodo, int altIzq, int altDer){
      * Note that this implementation throws an UnsupportedOperationException if the iterator returned by this collection's iterator method does not implement the remove method and this collection contains the specified object. 
     
      */
+    
+
     public boolean remove(Object o) throws ClassCastException, NullPointerException{
     	Nodo<T> borrar=null,mirar=null,cambiar=null, nPadre = null;
     	Nodo<T> raizTmp = this.getRaiz();

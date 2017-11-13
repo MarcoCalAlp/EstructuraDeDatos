@@ -61,9 +61,9 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
     System.out.println("Ingrese el tipo de libro");
     tipo=parseInt(entrada.readLine());
     lib.setTipo(tipo);
-     libs.AgregarLibro(lib);
-     libs.AddToList(lib);
-     System.out.println("Libro Agregado con exito!");
+    libs.AgregarLibro(lib);
+    libs.AddToList(lib);
+    System.out.println("Libro Agregado con exito! \n");
     }
     
     public void mostrarTipo(){
@@ -97,16 +97,14 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
     public void menu() throws Exception{ 
         int opc = -1;	
         int elem = -1;
-        System.out.println(toStringMenu());
        
         do
-	{
+	{  System.out.println(toStringMenu());
            System.out.println("Elija una opcion: "); 
            opc=Integer.parseInt(entrada.readLine());
         switch(opc){
             case 1:
             {       agregarLibro();
-                   
                     break;
             }
             case 2:
@@ -117,15 +115,11 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
             case 3:
             {
                     System.out.println("Eliminar un elemento");
-                    elem=Integer.parseInt(entrada.readLine());
-                    //obj.eliminarelemento(elem);
-
                     break;
             }
             case 4:
             {
                     System.out.println("Imprimir  En orden  Pre Orden  ");
-                   // obj.visualizar();
                     System.out.println("\n");
                     break;
             }

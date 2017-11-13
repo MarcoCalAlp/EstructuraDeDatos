@@ -148,4 +148,8 @@ public class Nodo<T>{
 	    	}
 	    	return Math.max(hIzq, hDer) + 1;
 		}
+
+    void setAltura(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 	}

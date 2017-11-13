@@ -9,7 +9,7 @@ package avl;
  *
  * @author Addiel
  */
-public class Libro {
+public class Libro implements Comparable{
     String nombre;
     String codigo;
     String autor;
@@ -17,6 +17,11 @@ public class Libro {
     int tipo;
 
     public Libro() {
+        nombre = "";
+        codigo = "";
+        autor = "";
+        descripcion = "";
+        tipo = -1;
     }
 
     public String getNombre() {
@@ -58,5 +63,11 @@ public class Libro {
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
-    
+    @Override
+    public int compareTo(Object o){
+        if(this.equals(o)){
+        return 0;
+        }
+        return 1;
+    }
 }
