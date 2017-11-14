@@ -67,7 +67,7 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
     }
     //--------------------------------------------------------------
     private int ingresaTipo(){
-      int tipo;
+        int tipo;
         try{
         System.out.println("=======Ingrese el tipo de libro=========");
         tipo=Integer.parseInt(entrada.readLine());
@@ -110,8 +110,8 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
         System.out.println(libs.ImprimePorNombre(entrada.readLine()));
     }
     //--------------------------------------------------------------
-    public boolean esCompleto(){
-         return false;
+    public void esCompleto(){
+         libs.ArbolCompleto();
     }
     //--------------------------------------------------------------
     public void esLleno(){
@@ -123,8 +123,8 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
         }
     }
     //--------------------------------------------------------------
-     public boolean esPerfecto(){
-         return false;
+     public void esPerfecto(){
+         libs.ArbolPerfecto();
     }
     //--------------------------------------------------------------
     public void Altura(){
@@ -132,7 +132,7 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
     }
     //--------------------------------------------------------------
     public void Nivel(){
-        libs.niveles();
+        libs.niveles();  
     }
     //--------------------------------------------------------------
     public void getPeso(){
@@ -192,11 +192,11 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
             break;
             
             case 6:
-            //this.esCompleto();
+            this.esCompleto();
             break;
             
             case 7:
-            //this.esPerfecto();
+            this.esPerfecto();
             break;
             
             case 8:
