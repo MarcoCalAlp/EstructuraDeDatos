@@ -73,7 +73,7 @@ public class Libros {
           }
           List<Integer>[] buckets = new ArrayList[10];
           for (int i = 0; i < buckets.length; i++) {
-              buckets[i] = new ArrayList<Integer>();
+              buckets[i] = new ArrayList<>();
           }
           // sort
           boolean flag = false;
