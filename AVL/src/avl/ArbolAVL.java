@@ -5,9 +5,10 @@ package avl;
  *
  * @author Addiel
  */
+import static java.lang.Math.max;
 import java.util.*;
 
-public class ArbolAVL<T> extends java.util.AbstractSet<T>{
+public class ArbolAVL<T> extends java.util.AbstractSet<T> {
     /**
      * Nodo raiz del arbol.
      */
@@ -778,6 +779,20 @@ private Nodo<T> estructurar(Nodo<T> nodo, int altIzq, int altDer){
     	
     	return nodo.getAltura();
     }
+    //--------------------------------
+    private int Alt(Nodo<T> aux){
+        if(aux==null){
+            return 0;
+        }
+        else{
+            return max(Alt(aux.getIzquierda())+1,Alt(aux.getDerecha())+1);
+        }
+    }
+    //--------------------------------
+    public int Altura(){
+       return this.Alt(this.getRaiz());
+    }
+    //--------------------------------
 
     /**
      * Se devuelve la profundidad del Nodo que contiene al dato pasado por parámetro,
@@ -923,15 +938,15 @@ private Nodo<T> estructurar(Nodo<T> nodo, int altIzq, int altDer){
     //-------------------------------
     private void densidad(Nodo SubRaiz,int m[],int j){
         if(SubRaiz!=null){
-            m[j]=0;
-            m[j]++;
+            //m[0]=1;
+            m[j]=m[j]+1;
             densidad(SubRaiz.getIzquierda(),m,j+1);
             densidad(SubRaiz.getDerecha(),m,j+1);
         }
     }
     //--------------------------------
     private int[] VAltura(){
-         int m[]=new int[altura(raiz.getDato())];
+         int m[]=new int[Altura()];
         return m;
     }
     //--------------------------------
