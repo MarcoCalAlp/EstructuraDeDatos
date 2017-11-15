@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import static java.lang.Integer.parseInt;
+import javax.xml.bind.JAXBException;
 
 /**
  *
@@ -94,6 +95,17 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
         }   
     }
     //--------------------------------------------------------------
+    public void mostrarLibrosByTipo(){
+        for(int i=0;i<libs.mostrarLibrosByTipo().size();i++){
+        libs.mostrarLibrosByTipo().get(i).toString();}
+    }
+    //--------------------------------------------------------------
+    public void mostrarLibrosByAutor(){}
+    //--------------------------------------------------------------
+    public void mostrarLibrosByNombre(){
+        
+    }
+    //--------------------------------------------------------------
     public void mostrarAutor() throws IOException
     {
         String autor;
@@ -165,7 +177,7 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
       System.out.println(libs.imprime());
      }
       //---------------------------------------------------------------
-      public void GuardarArchivo() throws InterruptedException, FileNotFoundException, IOException{
+      public void GuardarArchivo() throws InterruptedException, FileNotFoundException, IOException, JAXBException{
        libs.guardar();
     }
       //---------------------------------------------------------------
@@ -200,7 +212,7 @@ static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in
             break;
             
             case 2:
-            mostrarTipo();
+            this.mostrarLibrosByTipo();
             Thread.sleep(10000);
             clearConsole();
             break;
